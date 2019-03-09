@@ -23,6 +23,7 @@ end
 
 dest.write(ciphertext)
 
+puts "ROT13 Encryption/Decryption"
 puts "Source file #{source.path}\n\n"
 puts plaintext + "\n\n"
 puts "Destination file #{dest.path}\n\n"
