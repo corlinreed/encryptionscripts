@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
-puts "Numeric Encyrption/Decryption"
+puts "Numeric Encrytpion/Decryption"
 print "Encrypt (e) / decrypt (d)? "
 choice = gets
-if choice.chomp == "e" 
+if choice.chomp == "e"
 	print "Enter text to encrypt: "
 	plaintext = gets
 	ciphertext = plaintext.chomp!.chars
