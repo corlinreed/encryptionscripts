@@ -1,10 +1,11 @@
+#!/usr/bin/ruby
+
 puts 'Pig Latinator!'
 print 'Enter text: '
 given_string = gets
 
 #make sure there are only lowercase letters in the string
-given_string.downcase!
-given_string.strip!
+given_string.downcase!.strip!
 
 #split the string into an array of words
 words = given_string.split(/ /)
