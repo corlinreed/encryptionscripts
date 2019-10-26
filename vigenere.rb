@@ -13,12 +13,16 @@ class Character
       @number = @letter.ord - 64
     elsif (97..122).include? @letter.ord #check if it's a lowercase letter
       @number = @letter.ord - 96
+    elsif 32 == @letter.ord #check if it's a space
+      @number = 0
     end
   end
 
   def letter
     if (1..26).include? @number
       @letter = (@number + 96).chr
+    elsif 0 == @number
+      @letter = " "
     end
   end
 
@@ -54,8 +58,12 @@ puts
 
 counter = 0
 characters.each do |character|
-  encrypted_characters.push character.shift((key_characters[counter % key_characters.length].number)-1)
-  counter += 1
+  if (1..26).include? character.number
+    encrypted_characters.push character.shift((key_characters[counter % key_characters.length].number)-1)
+    counter += 1
+  elsif 0 == character.number
+    encrypted_characters.push " "
+  end
 end
 
 puts "Ciphertext:"
