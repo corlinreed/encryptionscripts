@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 
 class Character
-  #attr_accessor :letter, :number
-  
+
   def initialize(letter)
     @letter = letter
     @number = self.number
@@ -14,14 +13,16 @@ class Character
     elsif (97..122).include? @letter.ord #check if it's a lowercase letter
       @number = @letter.ord - 96
     elsif 32 == @letter.ord #check if it's a space
-      @number = 0
+      @number = -1
     end
   end
 
   def letter
     if (1..26).include? @number
-      @letter = (@number + 96).chr
-    elsif 0 == @number
+        @letter = (@number + 96).chr
+    elsif 0 == @number 
+        @letter = "z"
+    elsif -1 == @number
       @letter = " "
     end
   end
